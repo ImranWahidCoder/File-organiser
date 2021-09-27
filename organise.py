@@ -52,4 +52,4 @@ def organiser(path,remove_previous_copies):
             print(content," has been moved")
             
 # Any path can be given as first argument. For simplicity current working directory is taken
-organiser(os.getcwd(),True)
+organiser(os.getcwd(),False)
