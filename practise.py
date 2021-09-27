@@ -20,6 +20,7 @@ def typeReader(types,content):
                 return type
     return "others"
 
+# main function to organise the files
 def organiser(path,remove_previous_copies):
     # If the organised directory is absent, create a new one
     if not os.path.isdir(path+"/Organised"):
@@ -50,6 +51,5 @@ def organiser(path,remove_previous_copies):
                 os.remove(source)
             print(content," has been moved")
             
-
-
+# Any path can be given as first argument. For simplicity current working directory is taken
 organiser(os.getcwd(),True)
