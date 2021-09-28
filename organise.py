@@ -1,5 +1,6 @@
 import os
 import shutil
+from pathlib import Path
 
 # Create the type dictionary
 types={
@@ -13,7 +14,7 @@ types={
 
 # function to provide the category of a file
 def typeReader(types,content):
-    extension=os.path.splitext(content)[1]
+    extension=Path(content).suffix
     for type in types.keys():
         for subCategory in types[type]:
             if subCategory==extension:
@@ -32,7 +33,7 @@ def organiser(path,remove_previous_copies):
     # Iterate through the content and apply operation
     for content in contents:
         # Check if the content is a file or not
-        if os.path.isfile(content) and len(os.path.splitext(content)[1])>1:
+        if os.path.isfile(content) and len(Path(content).suffix)>1:
 
             # if the content is a file, find under which category it falls on
             category=typeReader(types,content)
