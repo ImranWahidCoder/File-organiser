@@ -52,5 +52,7 @@ def organiser(path,remove_previous_copies):
                 os.remove(source)
             print(content," has been moved")
             
-# Any path can be given as first argument. For simplicity current working directory is taken
-organiser(os.getcwd(),False)
+if __name__=='__main__':
+    # Any path whose content are to be organised can be given as first argument
+    # Second argument is set to True if you want to remove the previous copies of the file
+    organiser(os.getcwd(),False)
